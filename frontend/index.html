@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta
+            name="description"
+            content="SignalHer helps you review potentially concerning online messages, explore trusted safety resources, and consider your next steps."
+    >
+
+    <title>SignalHer | Your Safety, Your Choice</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+<div class="app-shell">
+
+    <!-- ======================================================
+         DESKTOP SIDEBAR
+         ====================================================== -->
+    <aside class="sidebar" aria-label="Main navigation">
+
+        <a href="#home"
+           class="brand"
+           data-nav-target="home">
+
+            <span class="brand-logo" aria-hidden="true">S</span>
+
+            <span class="brand-name">
+                SignalHer
+                <small>Your safety companion</small>
+            </span>
+        </a>
+
+        <div class="sidebar-label">WORKSPACE</div>
+
+        <nav class="sidebar-navigation" aria-label="Application pages">
+
+            <button
+                    type="button"
+                    class="nav-link active"
+                    data-nav-target="home"
+                    aria-current="page"
+            >
+                <span class="nav-icon" aria-hidden="true">⌂</span>
+                <span>Home</span>
+            </button>
+
+            <button
+                    type="button"
+                    class="nav-link"
+                    data-nav-target="search"
+            >
+                <span class="nav-icon" aria-hidden="true">⌕</span>
+                <span>Safety Search</span>
+            </button>
+
+            <button
+                    type="button"
+                    class="nav-link"
+                    data-nav-target="resources"
+            >
+                <span class="nav-icon" aria-hidden="true">♡</span>
+                <span>Safety Resources</span>
+            </button>
+
+            <button
+                    type="button"
+                    class="nav-link"
+                    data-nav-target="analyze"
+            >
+                <span class="nav-icon" aria-hidden="true">✎</span>
+                <span>Message Analysis</span>
+            </button>
+
+            <button
+                    type="button"
+                    class="nav-link"
+                    data-nav-target="results"
+            >
+                <span class="nav-icon" aria-hidden="true">▤</span>
+                <span>Findings</span>
+            </button>
+
+            <button
+                    type="button"
+                    class="nav-link"
+                    data-nav-target="timeline"
+            >
+                <span class="nav-icon" aria-hidden="true">◷</span>
+                <span>Incident Timeline</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-safety-note">
+                <span class="small-heart" aria-hidden="true">♥</span>
+                <p>Your safety. Your pace. Your choices.</p>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ======================================================
+         MAIN APPLICATION
+         ====================================================== -->
+    <div class="app-main">
+
+        <header class="topbar">
+
+            <div class="topbar-brand">
+
+                <span class="mobile-brand-logo" aria-hidden="true">S</span>
+
+                <div>
+                    <p class="topbar-title">SignalHer</p>
+                    <p class="topbar-subtitle">
+                        Online safety and support
+                    </p>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==================================================
+             APPLICATION SCREENS
+             ================================================== -->
+        <main class="screen-stage">
+
+
+            <!-- ==============================================
+                 SCREEN 1: HOME
+                 ============================================== -->
+            <section
+                    class="screen active"
+                    id="screen-home"
+                    data-screen="home"
+                    aria-labelledby="homeTitle"
+                    tabindex="-1"
+            >
+
+                <!-- Emergency information: Home page only -->
+                <aside
+                        class="home-emergency-panel"
+                        aria-label="Emergency assistance information"
+                >
+
+                    <div class="home-emergency-icon" aria-hidden="true">
+                        <span>112</span>
+                    </div>
+
+                    <div class="home-emergency-content">
+
+                        <p class="home-emergency-label">
+                            Immediate danger?
+                        </p>
+
+                        <p class="home-emergency-description">
+                            In India, dial <strong>112</strong> for urgent
+                            emergency assistance.
+                        </p>
+
+                        <a
+                                class="home-emergency-link"
+                                href="https://www.india.gov.in/directory/helpline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                        >
+                            Official Helpline Directory
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- Centred welcome content -->
+                <div class="home-layout home-layout-centered">
+
+                    <div class="welcome-copy home-welcome-centered">
+
+                        <p class="eyebrow home-eyebrow">
+                            WELCOME TO SIGNALHER
+                        </p>
+
+                        <h1 id="homeTitle">
+                            Your safety.
+                            <br>
+                            <span>Your voice. Your choice.</span>
+                        </h1>
+
+                        <p class="welcome-description">
+                            A supportive space to review concerning online
+                            messages, understand possible warning signs,
+                            organise incident information, and explore
+                            trusted safety resources.
+                        </p>
+
+                        <div class="home-actions">
+
+                            <button
+                                    type="button"
+                                    class="button button-primary"
+                                    data-open-screen="analyze"
+                            >
+                                Analyse a Message
+                                <span aria-hidden="true">→</span>
+                            </button>
+
+                            <button
+                                    type="button"
+                                    class="button button-secondary"
+                                    data-open-screen="resources"
+                            >
+                                Explore Safety Resources
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Small, decorative protection-themed accents -->
+                    <div
+                            class="home-protection-stickers"
+                            aria-hidden="true"
+                    >
+                        <span class="protection-sticker sticker-shield">🛡️</span>
+                        <span class="protection-sticker sticker-heart">♡</span>
+                        <span class="protection-sticker sticker-lock">🔒</span>
+                        <span class="protection-sticker sticker-hands">🤲</span>
+                        <span class="protection-sticker sticker-sparkles">✦</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================================
+                 SCREEN 2: MESSAGE ANALYSIS
+                 ============================================== -->
+            <section
+                    class="screen"
+                    id="screen-analyze"
+                    data-screen="analyze"
+                    aria-labelledby="analyzeTitle"
+                    tabindex="-1"
+                    hidden
+            >
+
+                <div class="screen-heading screen-heading-centered">
+
+                    <div>
+                        <p class="eyebrow">MESSAGE REVIEW · 01</p>
+
+                        <h1 id="analyzeTitle">Analyse a message</h1>
+
+                        <p>
+                            Review the wording and examine possible warning
+                            indicators in context.
+                        </p>
+                    </div>
+
+                    <span
+                            class="heading-mark"
+                            aria-hidden="true"
+                    >01</span>
+
+                </div>
+
+
+                <div class="content-card analysis-card analysis-card-centered">
+
+                    <form id="incidentForm">
+
+                        <div class="form-grid">
+
+                            <div class="form-field">
+
+                                <label for="platform">
+                                    Source platform
+                                </label>
+
+                                <select id="platform" name="platform">
+                                    <option value="whatsapp">WhatsApp</option>
+                                    <option value="instagram">Instagram</option>
+                                    <option value="email">Email</option>
+                                    <option value="linkedin">LinkedIn</option>
+                                    <option value="other">Other</option>
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="occurredAt">
+                                    Date and time
+                                </label>
+
+                                <input
+                                        type="datetime-local"
+                                        id="occurredAt"
+                                        name="occurred_at"
+                                        required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="messageText">
+                                Message text
+                            </label>
+
+                            <textarea
+                                    id="messageText"
+                                    name="message_text"
+                                    rows="5"
+                                    maxlength="2000"
+                                    placeholder="Enter the message you would like to review..."
+                                    aria-describedby="messageTextHelp characterCount"
+                                    required
+                            ></textarea>
+
+                            <div class="field-footer">
+
+                                <span id="messageTextHelp">
+                                    Avoid unnecessary personal information.
+                                </span>
+
+                                <span id="characterCount" aria-live="polite">
+                                    0 / 2000
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="userNote">
+                                Additional context
+                                <span class="optional">(optional)</span>
+                            </label>
+
+                            <textarea
+                                    id="userNote"
+                                    name="user_note"
+                                    rows="2"
+                                    maxlength="1000"
+                                    placeholder="Add relevant context for your review..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="privacy-notice">
+
+                            <span aria-hidden="true">♡</span>
+
+                            <p>
+                                Your message is submitted to the SignalHer
+                                backend for analysis. Safety Search uses
+                                category-based queries and must not include
+                                your private message or personal notes.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button
+                                    type="submit"
+                                    class="button button-primary"
+                                    id="analyzeButton"
+                            >
+                                Analyse Message
+                                <span aria-hidden="true">→</span>
+                            </button>
+
+                            <button
+                                    type="button"
+                                    class="button button-secondary"
+                                    id="clearIncidentButton"
+                            >
+                                Clear Form
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================================
+                 SCREEN 3: ANALYSIS FINDINGS
+                 ============================================== -->
+            <section
+                    class="screen"
+                    id="screen-results"
+                    data-screen="results"
+                    aria-labelledby="resultsTitle"
+                    tabindex="-1"
+                    hidden
+            >
+
+                <div class="screen-heading">
+
+                    <div>
+                        <p class="eyebrow">YOUR REVIEW</p>
+
+                        <h1 id="resultsTitle">Analysis findings</h1>
+
+                        <p>
+                            Review the highlighted wording, explanations,
+                            and suggested actions.
+                        </p>
+                    </div>
+
+                    <span
+                            class="heading-mark"
+                            aria-hidden="true"
+                    >02</span>
+
+                </div>
+
+
+                <div
+                        class="results-summary"
+                        id="resultsSummary"
+                        aria-live="polite"
+                >
+                    Your analysis will appear here.
+                </div>
+
+
+                <div
+                        id="analysisResult"
+                        class="results-container"
+                        aria-live="polite"
+                        aria-busy="false"
+                >
+
+                    <div class="empty-state">
+
+                        <span
+                                class="empty-state-icon"
+                                aria-hidden="true"
+                        >♡</span>
+
+                        <h2>No analysis yet</h2>
+
+                        <p>
+                            Submit a message for review to see its findings
+                            on this screen.
+                        </p>
+
+                        <button
+                                type="button"
+                                class="button button-primary"
+                                data-open-screen="analyze"
+                        >
+                            Review a Message
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="screen-actions results-actions">
+
+                    <button
+                            type="button"
+                            class="button button-secondary"
+                            data-open-screen="analyze"
+                    >
+                        Back to Message
+                    </button>
+
+                    <button
+                            type="button"
+                            class="button button-primary"
+                            id="continueToTimelineButton"
+                            data-open-screen="timeline"
+                    >
+                        Continue →
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================================
+                 SCREEN 4: INCIDENT TIMELINE
+                 Timeline generation will be automatic when the user
+                 continues from Findings. No generate button is shown.
+                 ============================================== -->
+            <section
+                    class="screen"
+                    id="screen-timeline"
+                    data-screen="timeline"
+                    aria-labelledby="timelineTitle"
+                    tabindex="-1"
+                    hidden
+            >
+
+                <div class="screen-heading">
+
+                    <div>
+                        <p class="eyebrow">INCIDENT ORGANISATION</p>
+
+                        <h1 id="timelineTitle">Incident timeline</h1>
+
+                        <p>
+                            A focused review of the message you analysed,
+                            with relevant observations and practical next steps.
+                        </p>
+                    </div>
+
+                    <span
+                            class="heading-mark"
+                            aria-hidden="true"
+                    >03</span>
+
+                </div>
+
+
+                <div class="content-card timeline-card">
+
+                    <div class="section-intro">
+
+                        <h2>Timeline review</h2>
+
+                        <p>
+                            Your review is prepared from the submitted incident
+                            and its analysis. No additional report-generation
+                            step is required.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                            id="timelineResult"
+                            class="timeline-container"
+                            aria-live="polite"
+                            aria-busy="false"
+                    >
+
+                        <div class="empty-state">
+
+                            <h3>Your review will appear here</h3>
+
+                            <p>
+                                Analyse a message and select Continue on the
+                                Findings screen to prepare its timeline review.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <p class="autonomy-note">
+                        Suggestions are not guarantees and may not fit every
+                        situation. Your context, safety, and final decisions
+                        remain yours.
+                    </p>
+
+
+                    <!-- Retained for backward compatibility with older JS.
+                         It is intentionally not a visible action or button. -->
+                    <div id="timelineActions" hidden>
+                        <button
+                                type="button"
+                                id="timelineButton"
+                                hidden
+                                aria-controls="timelineResult"
+                                tabindex="-1"
+                        >
+                            Generate Timeline Review
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================================
+                 SCREEN 5: SAFETY RESOURCES
+                 ============================================== -->
+            <section
+                    class="screen"
+                    id="screen-resources"
+                    data-screen="resources"
+                    aria-labelledby="resourcesTitle"
+                    tabindex="-1"
+                    hidden
+            >
+
+                <div class="screen-heading">
+
+                    <div>
+                        <p class="eyebrow">TRUSTED SUPPORT</p>
+
+                        <h1 id="resourcesTitle">Safety resources</h1>
+
+                        <p>
+                            Explore reporting channels and support
+                            information from official organisations.
+                        </p>
+                    </div>
+
+                    <span
+                            class="heading-mark"
+                            aria-hidden="true"
+                    >05</span>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <div class="resources-toolbar">
+
+                        <div>
+                            <h2>Support directory</h2>
+
+                            <p>
+                                Review each resource description and visit
+                                its official website for further guidance.
+                            </p>
+                        </div>
+
+                        <button
+                                type="button"
+                                class="button button-secondary"
+                                id="refreshResources"
+                        >
+                            Refresh Resources
+                        </button>
+
+                    </div>
+
+
+                    <div
+                            id="resourceList"
+                            class="resource-grid"
+                            aria-live="polite"
+                            aria-busy="false"
+                    >
+
+                        <div class="empty-state">
+                            <p>
+                                Safety resources will appear when the
+                                backend responds.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Emergency information also remains on Resources -->
+                <div class="emergency-panel">
+
+                    <div>
+                        <h2>Immediate emergency assistance</h2>
+
+                        <p>
+                            In India, dial <strong>112</strong> for urgent
+                            emergency assistance. For other helplines and
+                            support services, consult the official directory.
+                        </p>
+                    </div>
+
+                    <a
+                            class="button button-secondary"
+                            href="https://www.india.gov.in/directory/helpline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                    >
+                        Official Helpline Directory
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================================
+                 SCREEN 6: SAFETY SEARCH
+                 ============================================== -->
+            <section
+                    class="screen"
+                    id="screen-search"
+                    data-screen="search"
+                    aria-labelledby="searchTitle"
+                    tabindex="-1"
+                    hidden
+            >
+
+                <div class="screen-heading screen-heading-centered">
+
+                    <div>
+                        <p class="eyebrow">FIND TRUSTED INFORMATION</p>
+
+                        <h1 id="searchTitle">Safety search</h1>
+
+                        <p>
+                            Explore general support and reporting information
+                            without putting private incident text into
+                            your search query.
+                        </p>
+                    </div>
+
+                    <span
+                            class="heading-mark"
+                            aria-hidden="true"
+                    >06</span>
+
+                </div>
+
+
+                <div class="content-card search-card search-card-centered">
+
+                    <div class="section-intro">
+
+                        <h2>What information do you need?</h2>
+
+                        <p>
+                            Select a topic to prepare a general,
+                            India-focused search in the configured
+                            Google Programmable Search engine.
+                        </p>
+
+                    </div>
+
+
+                    <form id="searchForm">
+
+                        <div class="form-field">
+
+                            <label for="searchCategory">
+                                Safety topic
+                            </label>
+
+                            <select id="searchCategory" name="category">
+
+                                <option value="general">
+                                    General online safety support
+                                </option>
+
+                                <option value="cybercrime">
+                                    Cybercrime reporting
+                                </option>
+
+                                <option value="image_abuse">
+                                    Intimate-image abuse support
+                                </option>
+
+                                <option value="harassment">
+                                    Online harassment support
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                                type="submit"
+                                class="button button-primary"
+                                id="googleSearchButton"
+                        >
+                            Search Safety Resources
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                    </form>
+
+
+                    <div class="search-privacy-note">
+
+                        <strong>Privacy first</strong>
+
+                        <p>
+                            Search uses a general topic-based query.
+                            Your submitted message, names, account
+                            identifiers, and private notes must not be
+                            included in search terms.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                            id="searchResult"
+                            class="search-result"
+                            aria-live="polite"
+                            aria-busy="false"
+                    ></div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- ==================================================
+             MOBILE NAVIGATION
+             ================================================== -->
+        <nav
+                class="mobile-navigation"
+                aria-label="Mobile navigation"
+        >
+
+            <button
+                    type="button"
+                    class="mobile-nav-link active"
+                    data-nav-target="home"
+                    aria-current="page"
+                    aria-label="Home"
+            >
+                <span aria-hidden="true">⌂</span>
+                <small>Home</small>
+            </button>
+
+            <button
+                    type="button"
+                    class="mobile-nav-link"
+                    data-nav-target="search"
+                    aria-label="Safety Search"
+            >
+                <span aria-hidden="true">⌕</span>
+                <small>Search</small>
+            </button>
+
+            <button
+                    type="button"
+                    class="mobile-nav-link"
+                    data-nav-target="resources"
+                    aria-label="Safety resources"
+            >
+                <span aria-hidden="true">♡</span>
+                <small>Support</small>
+            </button>
+
+            <button
+                    type="button"
+                    class="mobile-nav-link"
+                    data-nav-target="analyze"
+                    aria-label="Message analysis"
+            >
+                <span aria-hidden="true">✎</span>
+                <small>Analyse</small>
+            </button>
+
+            <button
+                    type="button"
+                    class="mobile-nav-link"
+                    data-nav-target="results"
+                    aria-label="Analysis findings"
+            >
+                <span aria-hidden="true">▤</span>
+                <small>Findings</small>
+            </button>
+
+            <button
+                    type="button"
+                    class="mobile-nav-link"
+                    data-nav-target="timeline"
+                    aria-label="Incident timeline"
+            >
+                <span aria-hidden="true">◷</span>
+                <small>Timeline</small>
+            </button>
+
+        </nav>
+
+    </div>
+
+</div>
+</body>
+</html>

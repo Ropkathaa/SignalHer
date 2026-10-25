@@ -1,0 +1,2251 @@
+/* =========================================================
+   SIGNALHER — RESPONSIVE STYLESHEET
+   Desktop | Laptop | Tablet | Mobile
+   Clean white interface with soft pink accents
+   ========================================================= */
+
+/* =========================================================
+   1. THEME
+   ========================================================= */
+
+:root {
+    --white: #ffffff;
+    --black: #19151b;
+    --ink: #29232b;
+    --muted: #79717d;
+    --muted-light: #9b929e;
+
+    --pink: #ed2780;
+    --pink-dark: #c90f62;
+    --pink-deep: #a70c50;
+    --pink-light: #fff0f6;
+    --pink-pale: #fff8fb;
+    --pink-border: #f5c4d9;
+
+    --surface-soft: #fff8fb;
+    --background: #ffffff;
+    --surface: #ffffff;
+    --border: #eee4eb;
+
+    --success: #25784f;
+    --success-bg: #edf9f2;
+    --danger: #a51e43;
+    --danger-bg: #fff0f3;
+
+    --sidebar-width: 248px;
+    --header-height: 68px;
+    --mobile-nav-height: 66px;
+
+    --radius-sm: 9px;
+    --radius-md: 13px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+
+    --gradient-pink:
+            linear-gradient(115deg, #c90f62 0%, #ed2780 54%, #ff70b0 100%);
+
+    --gradient-soft:
+            linear-gradient(135deg, #fff0f6 0%, #ffffff 85%);
+
+    --shadow-card:
+            0 8px 28px rgba(55, 24, 40, 0.045);
+
+    --shadow-pink:
+            0 8px 22px rgba(218, 24, 105, 0.19);
+}
+
+
+/* =========================================================
+   2. RESET AND GLOBAL STYLES
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: var(--white);
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    overflow: hidden;
+    background: var(--white);
+    color: var(--ink);
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(237, 39, 128, 0.38);
+    outline-offset: 3px;
+}
+
+a {
+    color: var(--pink-dark);
+}
+
+a:hover {
+    color: var(--pink-deep);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--black);
+    line-height: 1.22;
+}
+
+h1 {
+    font-size: clamp(1.75rem, 3vw, 2.65rem);
+    font-weight: 750;
+    letter-spacing: -0.04em;
+}
+
+h2 {
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    font-size: 1.04rem;
+    font-weight: 700;
+}
+
+p {
+    overflow-wrap: anywhere;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   3. APPLICATION SHELL
+   ========================================================= */
+
+.app-shell {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: var(--white);
+}
+
+.app-main {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: 0;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
+    background: var(--white);
+}
+
+
+/* =========================================================
+   4. DESKTOP SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    display: flex;
+    flex: 0 0 var(--sidebar-width);
+    flex-direction: column;
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    height: 100%;
+    padding: 21px 14px 15px;
+    border-right: 1px solid var(--border);
+    background:
+            linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #fffafd 65%,
+                    #fff3f8 100%
+            );
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #efb5cd transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background: #efb5cd;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 4px 7px 25px;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.brand:hover {
+    color: var(--black);
+}
+
+.brand-logo,
+.mobile-brand-logo {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    color: var(--white);
+    font-weight: 800;
+    background: var(--gradient-pink);
+    box-shadow:
+            0 5px 12px rgba(201, 15, 98, 0.22),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.brand-logo {
+    width: 43px;
+    height: 43px;
+    border-radius: 14px;
+    font-size: 1.45rem;
+}
+
+.brand-name {
+    display: block;
+    font-size: 1.27rem;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+}
+
+.brand-name small {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 0.77rem;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.sidebar-label {
+    margin: 5px 10px 12px;
+    color: var(--muted-light);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+}
+
+.sidebar-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 45px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: transparent;
+    color: #574d59;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 650;
+    cursor: pointer;
+    transition:
+            color 160ms ease,
+            background 160ms ease,
+            border-color 160ms ease,
+            transform 160ms ease;
+}
+
+.nav-link:hover {
+    border-color: var(--pink-border);
+    background: var(--pink-pale);
+    color: var(--pink-dark);
+    transform: translateX(2px);
+}
+
+.nav-link.active {
+    border-color: rgba(237, 39, 128, 0.12);
+    background: var(--gradient-pink);
+    color: var(--white);
+    box-shadow: 0 5px 13px rgba(201, 15, 98, 0.15);
+}
+
+.nav-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-top: auto;
+    padding-top: 28px;
+}
+
+.sidebar-safety-note {
+    padding: 14px 12px;
+    border: 1px solid var(--pink-border);
+    border-radius: 14px;
+    background: var(--gradient-soft);
+}
+
+.small-heart {
+    color: var(--pink);
+    font-size: 1.15rem;
+}
+
+.sidebar-safety-note p {
+    margin: 5px 0 0;
+    color: #574452;
+    font-size: 0.81rem;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   5. TOP BAR
+   ========================================================= */
+
+.topbar {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex: 0 0 var(--header-height);
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    min-width: 0;
+    height: var(--header-height);
+    padding: 0 28px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.mobile-brand-logo {
+    display: none;
+    width: 37px;
+    height: 37px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+}
+
+.topbar-title {
+    margin: 0;
+    color: var(--black);
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.topbar-subtitle {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+
+/* =========================================================
+   6. SCREEN VIEWPORT AND TRANSITIONS
+   ========================================================= */
+
+.screen-stage {
+    position: relative;
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: var(--white);
+}
+
+.screen {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 26px clamp(20px, 3.2vw, 43px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #efb5cd transparent;
+    background:
+            radial-gradient(
+                    ellipse at 100% 0%,
+                    rgba(255, 240, 247, 0.35),
+                    transparent 36%
+            ),
+            var(--white);
+}
+
+.screen::-webkit-scrollbar {
+    width: 5px;
+}
+
+.screen::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background: #efb5cd;
+}
+
+.screen.active:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: screen-enter 200ms ease-out both;
+}
+
+@keyframes screen-enter {
+    from {
+        opacity: 0.65;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   7. STANDARD SCREEN HEADINGS
+   ========================================================= */
+
+.screen-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-shrink: 0;
+    margin-bottom: 3px;
+}
+
+.screen-heading > div {
+    min-width: 0;
+}
+
+.screen-heading .eyebrow {
+    margin: 0 0 7px;
+}
+
+.screen-heading h1 {
+    margin: 0 0 8px;
+}
+
+.screen-heading p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.91rem;
+}
+
+.eyebrow {
+    color: var(--pink-dark);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+}
+
+.heading-mark {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--pink-border);
+    border-radius: 14px;
+    background: var(--gradient-soft);
+    color: var(--pink-dark);
+    font-weight: 800;
+    box-shadow: 0 5px 13px rgba(218, 24, 105, 0.07);
+}
+
+.screen-footnote {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+
+/* Center selected screen headings without shifting their text */
+
+.screen-heading-centered {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+}
+
+.screen-heading-centered > div {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.screen-heading-centered p:not(.eyebrow) {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.screen-heading-centered .heading-mark {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+/* =========================================================
+   8. HOME PAGE
+   ========================================================= */
+
+#screen-home {
+    justify-content: center;
+    gap: 12px;
+    padding-top: 112px;
+}
+
+/* The emergency block belongs to the Home screen only. */
+
+.home-emergency-panel {
+    position: absolute;
+    top: 19px;
+    right: clamp(18px, 3vw, 42px);
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: min(345px, calc(100% - 36px));
+    padding: 12px 15px;
+
+    border: 1px solid #f2c4d2;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 7px 24px rgba(100, 31, 62, 0.065);
+    backdrop-filter: blur(8px);
+}
+
+.home-emergency-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 45px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #f4cad9;
+    border-radius: 13px;
+    background: #fff2f6;
+    color: var(--pink-deep);
+}
+
+.home-emergency-icon span {
+    font-size: 1rem;
+    font-weight: 850;
+    letter-spacing: -0.02em;
+}
+
+.home-emergency-content {
+    min-width: 0;
+}
+
+.home-emergency-label {
+    margin: 0 0 3px;
+    color: var(--black);
+    font-size: 0.86rem;
+    font-weight: 800;
+}
+
+.home-emergency-description {
+    margin: 0 0 5px;
+    color: #68525f;
+    font-size: 0.77rem;
+    line-height: 1.5;
+}
+
+.home-emergency-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--pink-dark);
+    font-size: 0.77rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.home-emergency-link:hover {
+    color: var(--pink-deep);
+    text-decoration: underline;
+}
+
+.home-layout,
+.home-layout-centered {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1040px;
+    min-width: 0;
+    min-height: 390px;
+    flex: 1 0 auto;
+    margin: auto;
+}
+
+.welcome-copy {
+    width: 100%;
+    min-width: 0;
+}
+
+.home-welcome-centered {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home-welcome-centered .eyebrow {
+    margin-bottom: 18px;
+}
+
+.home-welcome-centered h1 {
+    margin: 0 0 20px;
+    font-size: clamp(2.5rem, 5vw, 4.6rem);
+    line-height: 1.09;
+    letter-spacing: -0.055em;
+}
+
+.home-welcome-centered h1 span {
+    background: var(--gradient-pink);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.welcome-description {
+    max-width: 690px;
+    margin: 0 auto 25px;
+    color: var(--muted);
+    font-size: clamp(0.94rem, 1.4vw, 1.1rem);
+    line-height: 1.8;
+}
+
+.home-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.home-privacy-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.84rem;
+}
+
+.home-privacy-note span {
+    color: var(--pink);
+}
+
+.home-footer-note {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--pink);
+    border-radius: 9px;
+    background: var(--white);
+    color: var(--muted);
+    font-size: 0.76rem;
+    line-height: 1.55;
+}
+
+
+/* Decorative protection stickers */
+
+.home-protection-stickers {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.protection-sticker {
+    position: absolute;
+    display: grid;
+    place-items: center;
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid rgba(245, 196, 217, 0.85);
+    border-radius: 17px;
+    background: rgba(255, 248, 251, 0.88);
+    color: var(--pink-dark);
+
+    font-size: 1.45rem;
+    line-height: 1;
+    box-shadow: 0 7px 19px rgba(100, 31, 62, 0.055);
+    opacity: 0.78;
+}
+
+.sticker-shield {
+    top: 13%;
+    left: 5%;
+    transform: rotate(-9deg);
+}
+
+.sticker-heart {
+    top: 20%;
+    right: 5%;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.65rem;
+    transform: rotate(8deg);
+}
+
+.sticker-lock {
+    bottom: 19%;
+    left: 10%;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+}
+
+.sticker-hands {
+    right: 8%;
+    bottom: 15%;
+    width: 54px;
+    height: 54px;
+    font-size: 1.45rem;
+    transform: rotate(7deg);
+}
+
+.sticker-sparkles {
+    top: 4%;
+    left: 48%;
+    width: 37px;
+    height: 37px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    font-size: 1.55rem;
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   9. BUTTONS
+   ========================================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 43px;
+    max-width: 100%;
+    padding: 10px 17px;
+
+    border: 1px solid transparent;
+    border-radius: 11px;
+
+    font-size: 0.88rem;
+    font-weight: 750;
+    line-height: 1.35;
+
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+
+    transition:
+            background 160ms ease,
+            border-color 160ms ease,
+            color 160ms ease,
+            box-shadow 160ms ease,
+            transform 160ms ease;
+}
+
+.button:disabled {
+    opacity: 0.58;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.button:not(:disabled):active {
+    transform: scale(0.985);
+}
+
+.button-primary {
+    background: var(--gradient-pink);
+    color: var(--white);
+    box-shadow: var(--shadow-pink);
+}
+
+.button-primary:hover:not(:disabled) {
+    box-shadow: 0 10px 25px rgba(218, 24, 105, 0.25);
+    filter: saturate(1.07);
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+.button-secondary {
+    border-color: #eadfe7;
+    background: var(--white);
+    color: var(--ink);
+}
+
+.button-secondary:hover:not(:disabled) {
+    border-color: var(--pink-border);
+    background: var(--pink-pale);
+    color: var(--pink-dark);
+}
+
+.button-emergency {
+    border-color: #f3c4d2;
+    background: var(--white);
+    color: var(--pink-dark);
+}
+
+.button-emergency:hover:not(:disabled) {
+    background: var(--pink-light);
+    color: var(--pink-deep);
+}
+
+.screen-actions,
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 5px;
+}
+
+
+/* =========================================================
+   10. CARDS AND FORMS
+   ========================================================= */
+
+.content-card {
+    width: 100%;
+    min-width: 0;
+    padding: clamp(18px, 2.4vw, 30px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    box-shadow: var(--shadow-card);
+}
+
+.analysis-card {
+    max-width: 960px;
+}
+
+/* Center the form itself beneath its centered heading. */
+
+.analysis-card-centered {
+    width: 100%;
+    max-width: 860px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#incidentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 17px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.form-field label,
+label {
+    color: var(--ink);
+    font-size: 0.87rem;
+    font-weight: 750;
+}
+
+.optional {
+    color: var(--muted);
+    font-size: 0.81rem;
+    font-weight: 500;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 43px;
+    padding: 11px 12px;
+
+    border: 1px solid #e4dbe2;
+    border-radius: 10px;
+    outline: none;
+
+    background: var(--white);
+    color: var(--ink);
+    font-size: 0.92rem;
+
+    transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #eab5cc;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(237, 39, 128, 0.09);
+}
+
+textarea {
+    min-height: 85px;
+    max-height: 240px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+textarea::placeholder,
+input::placeholder {
+    color: #aaa0aa;
+}
+
+.field-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+#characterCount {
+    color: var(--pink-dark);
+    font-weight: 700;
+}
+
+.privacy-notice,
+.search-privacy-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 13px 15px;
+    border: 1px solid var(--pink-border);
+    border-radius: 12px;
+    background: var(--pink-pale);
+    color: #59434f;
+}
+
+.privacy-notice > span {
+    flex-shrink: 0;
+    color: var(--pink);
+    font-size: 1.15rem;
+}
+
+.privacy-notice p,
+.search-privacy-note p {
+    margin: 0;
+    color: #655460;
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   11. NOTICES AND EMPTY STATES
+   ========================================================= */
+
+.notice-panel {
+    padding: 16px 19px;
+    border: 1px solid #f0c5d7;
+    border-left: 4px solid var(--pink);
+    border-radius: 12px;
+    background: var(--pink-pale);
+}
+
+.notice-panel strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--pink-deep);
+    font-size: 0.89rem;
+}
+
+.notice-panel p {
+    margin: 0;
+    color: #604c57;
+    font-size: 0.84rem;
+    line-height: 1.65;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 180px;
+    padding: 24px;
+    border: 1px dashed #edccda;
+    border-radius: 15px;
+    background: var(--surface-soft);
+    text-align: center;
+}
+
+.empty-state h2,
+.empty-state h3,
+.empty-state p {
+    margin: 0;
+}
+
+.empty-state h2 {
+    font-size: 1.15rem;
+}
+
+.empty-state h3 {
+    font-size: 1rem;
+}
+
+.empty-state p {
+    max-width: 470px;
+    color: var(--muted);
+    font-size: 0.87rem;
+}
+
+.empty-state-icon {
+    display: grid;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 15px;
+    background: var(--pink-light);
+    color: var(--pink-dark);
+    font-size: 1.4rem;
+}
+
+.error-message {
+    margin: 0;
+    padding: 13px 15px;
+    border: 1px solid #f2becb;
+    border-radius: 10px;
+    background: var(--danger-bg);
+    color: var(--danger);
+    font-size: 0.87rem;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   12. FINDINGS
+   ========================================================= */
+
+.results-summary {
+    padding: 12px 15px;
+    border: 1px solid var(--pink-border);
+    border-radius: 11px;
+    background: var(--gradient-soft);
+    color: var(--ink);
+    font-size: 0.85rem;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    min-width: 0;
+}
+
+.finding {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--pink);
+    border-radius: 13px;
+    background: var(--white);
+    box-shadow: 0 4px 14px rgba(70, 25, 46, 0.035);
+    overflow-wrap: anywhere;
+}
+
+.finding h3 {
+    margin: 6px 0 10px;
+}
+
+.finding p {
+    margin: 8px 0;
+    color: #605660;
+    font-size: 0.87rem;
+    line-height: 1.65;
+}
+
+.finding-label {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #f1bfd3;
+    border-radius: 999px;
+    background: var(--pink-light);
+    color: var(--pink-deep);
+    font-size: 0.75rem;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.finding-rule-id {
+    color: var(--muted-light) !important;
+    font-size: 0.76rem !important;
+}
+
+.evidence {
+    padding: 11px 13px;
+    border-left: 3px solid var(--pink);
+    border-radius: 0 9px 9px 0;
+    background: #fff5f9;
+    color: var(--black) !important;
+}
+
+.results-actions {
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   13. TIMELINE
+   ========================================================= */
+
+.section-intro {
+    margin-bottom: 20px;
+}
+
+.section-intro h2 {
+    margin-bottom: 7px;
+}
+
+.section-intro p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.timeline-card {
+    max-width: 1040px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.timeline-entry,
+.timeline-observation,
+.action-card {
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    overflow-wrap: anywhere;
+}
+
+.timeline-entry {
+    border-left: 4px solid var(--pink);
+}
+
+.timeline-entry h3,
+.timeline-observation h3,
+.action-card h3 {
+    margin-bottom: 8px;
+}
+
+.timeline-entry p,
+.timeline-observation p,
+.action-card p,
+.timeline-container li {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.65;
+}
+
+.timeline-container ul,
+.action-card ol,
+.action-card ul {
+    padding-left: 22px;
+}
+
+.timeline-container li + li {
+    margin-top: 6px;
+}
+
+.timeline-time {
+    color: var(--pink-dark);
+    font-size: 0.77rem;
+    font-weight: 750;
+}
+
+.action-card {
+    border-left: 3px solid #eab2cc;
+}
+
+.action-card h3 {
+    color: var(--pink-deep);
+}
+
+.autonomy-note {
+    margin: 14px 0 0;
+    padding: 12px 15px;
+    border: 1px solid var(--pink-border);
+    border-left: 3px solid var(--pink);
+    border-radius: 10px;
+    background: var(--pink-pale);
+    color: #604c57;
+    font-size: 0.84rem;
+    line-height: 1.65;
+}
+
+/* The old timeline generation action stays hidden. */
+
+#timelineActions[hidden],
+#timelineButton[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   14. SAFETY RESOURCES
+   ========================================================= */
+
+.resources-toolbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.resources-toolbar h2 {
+    margin-bottom: 5px;
+}
+
+.resources-toolbar p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.86rem;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    width: 100%;
+    min-width: 0;
+}
+
+.resource-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    min-width: 0;
+    padding: 17px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: linear-gradient(145deg, #ffffff 0%, #fffafd 100%);
+    transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            transform 160ms ease;
+}
+
+.resource-card:hover {
+    border-color: var(--pink-border);
+    box-shadow: 0 8px 19px rgba(97, 30, 59, 0.05);
+    transform: translateY(-2px);
+}
+
+.resource-card h3 {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.resource-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.84rem;
+    line-height: 1.6;
+}
+
+.resource-card a {
+    margin-top: auto;
+    padding-top: 4px;
+    color: var(--pink-dark);
+    font-size: 0.84rem;
+    font-weight: 750;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.resource-card a:hover {
+    text-decoration: underline;
+}
+
+.emergency-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 23px;
+    border: 1px solid #f0c0ce;
+    border-radius: 16px;
+    background: linear-gradient(115deg, #fff2f6 0%, #ffffff 88%);
+}
+
+.emergency-panel h2 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+}
+
+.emergency-panel p {
+    max-width: 550px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.84rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   15. SAFETY SEARCH
+   ========================================================= */
+
+.search-card {
+    max-width: 800px;
+}
+
+/* Keep the whole Safety Search panel centred. */
+
+.search-card-centered {
+    width: 100%;
+    max-width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.search-card-centered .section-intro {
+    text-align: center;
+}
+
+.search-card form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.search-card .form-field {
+    width: 100%;
+}
+
+.search-card-centered form {
+    align-items: stretch;
+}
+
+.search-card-centered form .button {
+    align-self: center;
+    min-width: 240px;
+}
+
+.search-privacy-note {
+    display: block;
+    margin-top: 22px;
+}
+
+.search-privacy-note strong {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--pink-deep);
+    font-size: 0.88rem;
+}
+
+.search-privacy-note p {
+    margin: 0;
+}
+
+.search-result {
+    min-width: 0;
+    margin-top: 17px;
+    overflow-wrap: anywhere;
+}
+
+.search-result a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.search-link {
+    display: inline-block;
+    margin: 10px 0;
+    color: var(--pink-dark);
+    font-size: 0.88rem;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   16. MOBILE NAVIGATION
+   ========================================================= */
+
+.mobile-navigation {
+    display: none;
+}
+
+
+/* =========================================================
+   17. ACCESSIBILITY AND MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* =========================================================
+   18. LAPTOPS
+   ========================================================= */
+
+@media (max-width: 1150px) {
+    :root {
+        --sidebar-width: 220px;
+    }
+
+    .sidebar {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .screen {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    #screen-home {
+        padding-top: 112px;
+    }
+
+    .home-emergency-panel {
+        right: 24px;
+    }
+
+    .sticker-shield {
+        left: 2%;
+    }
+
+    .sticker-heart {
+        right: 2%;
+    }
+}
+
+
+/* =========================================================
+   19. TABLETS
+   ========================================================= */
+
+@media (max-width: 900px) {
+    :root {
+        --sidebar-width: 200px;
+        --header-height: 64px;
+    }
+
+    .topbar {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .screen {
+        padding: 22px 20px;
+    }
+
+    #screen-home {
+        padding-top: 120px;
+    }
+
+    .home-welcome-centered h1 {
+        font-size: clamp(2.3rem, 5.6vw, 3.5rem);
+    }
+
+    .home-emergency-panel {
+        width: min(330px, calc(100% - 40px));
+    }
+
+    .home-layout,
+    .home-layout-centered {
+        min-height: 360px;
+    }
+
+    .protection-sticker {
+        width: 44px;
+        height: 44px;
+        font-size: 1.25rem;
+    }
+
+    .sticker-shield {
+        top: 7%;
+        left: 1%;
+    }
+
+    .sticker-heart {
+        top: 13%;
+        right: 1%;
+    }
+
+    .sticker-lock {
+        left: 3%;
+    }
+
+    .sticker-hands {
+        right: 3%;
+    }
+}
+
+
+/* =========================================================
+   20. MOBILE PHONES
+   ========================================================= */
+
+@media (max-width: 650px) {
+    :root {
+        --header-height: 61px;
+        --mobile-nav-height: 67px;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .app-main {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .topbar {
+        flex: 0 0 var(--header-height);
+        height: var(--header-height);
+        min-height: var(--header-height);
+        padding:
+                max(0px, env(safe-area-inset-top, 0px))
+                14px
+                0;
+        gap: 7px;
+    }
+
+    .topbar-brand {
+        gap: 8px;
+    }
+
+    .mobile-brand-logo {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        border-radius: 11px;
+        font-size: 1.05rem;
+    }
+
+    .topbar-title {
+        font-size: 0.91rem;
+    }
+
+    .topbar-subtitle {
+        max-width: 180px;
+        font-size: 0.68rem;
+        line-height: 1.3;
+    }
+
+    .screen-stage {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .screen {
+        padding: 18px 15px 23px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scrollbar-width: thin;
+    }
+
+    .screen.active:not([hidden]) {
+        gap: 15px;
+    }
+
+    .screen-heading {
+        gap: 11px;
+    }
+
+    .screen-heading h1 {
+        margin-bottom: 7px;
+        font-size: clamp(1.65rem, 7vw, 2.2rem);
+    }
+
+    .screen-heading p:not(.eyebrow) {
+        font-size: 0.83rem;
+        line-height: 1.6;
+    }
+
+    .screen-heading .eyebrow {
+        font-size: 0.66rem;
+    }
+
+    .heading-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+        font-size: 0.88rem;
+    }
+
+    .screen-heading-centered {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .screen-heading-centered .heading-mark {
+        position: absolute;
+        top: -2px;
+        right: 0;
+        width: 31px;
+        height: 31px;
+        border-radius: 9px;
+        font-size: 0.75rem;
+    }
+
+
+    /* Home and emergency card */
+
+    #screen-home {
+        justify-content: flex-start;
+        gap: 12px;
+        padding-top: 125px;
+    }
+
+    .home-emergency-panel {
+        top: 12px;
+        right: 12px;
+        left: 12px;
+        gap: 10px;
+        width: auto;
+        padding: 10px 12px;
+        border-radius: 13px;
+    }
+
+    .home-emergency-icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+        border-radius: 11px;
+    }
+
+    .home-emergency-icon span {
+        font-size: 0.92rem;
+    }
+
+    .home-emergency-label {
+        font-size: 0.81rem;
+    }
+
+    .home-emergency-description {
+        font-size: 0.73rem;
+    }
+
+    .home-emergency-link {
+        font-size: 0.73rem;
+    }
+
+    .home-layout,
+    .home-layout-centered {
+        min-height: 360px;
+        flex: 1 0 auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-welcome-centered .eyebrow {
+        margin-bottom: 12px;
+    }
+
+    .home-welcome-centered h1 {
+        margin-bottom: 15px;
+        font-size: clamp(2rem, 9vw, 2.85rem);
+        line-height: 1.1;
+    }
+
+    .welcome-description {
+        margin-bottom: 19px;
+        font-size: 0.88rem;
+        line-height: 1.65;
+    }
+
+    .home-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 9px;
+        margin-bottom: 16px;
+    }
+
+    .home-actions .button {
+        width: 100%;
+    }
+
+    .home-privacy-note {
+        font-size: 0.79rem;
+    }
+
+    .home-footer-note {
+        padding: 10px 11px;
+        font-size: 0.71rem;
+    }
+
+    /* Use fewer stickers on small screens so the text remains clear. */
+
+    .protection-sticker {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        font-size: 1.05rem;
+        opacity: 0.6;
+    }
+
+    .sticker-shield {
+        top: 1%;
+        left: 0;
+    }
+
+    .sticker-heart {
+        top: 5%;
+        right: 0;
+        width: 34px;
+        height: 34px;
+    }
+
+    .sticker-lock {
+        bottom: 8%;
+        left: 0;
+    }
+
+    .sticker-hands {
+        right: 0;
+        bottom: 6%;
+    }
+
+    .sticker-sparkles {
+        top: -2%;
+        left: 46%;
+        width: 27px;
+        height: 27px;
+    }
+
+
+    /* Forms */
+
+    .content-card {
+        padding: 16px;
+        border-radius: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .form-field label,
+    label {
+        font-size: 0.85rem;
+    }
+
+    input,
+    select,
+    textarea {
+        min-height: 43px;
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 95px;
+    }
+
+    .field-footer {
+        font-size: 0.7rem;
+    }
+
+    .privacy-notice {
+        padding: 11px;
+    }
+
+    .privacy-notice p {
+        font-size: 0.78rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 9px;
+    }
+
+    .form-actions .button {
+        width: 100%;
+    }
+
+    .button {
+        min-height: 44px;
+        padding: 11px 13px;
+        font-size: 0.85rem;
+    }
+
+    /* Center analysis and search cards */
+
+    .analysis-card-centered,
+    .search-card-centered,
+    .timeline-card {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .search-card-centered .section-intro {
+        text-align: center;
+    }
+
+    .search-card-centered form .button {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Findings */
+
+    .results-summary {
+        font-size: 0.8rem;
+    }
+
+    .finding {
+        padding: 14px;
+    }
+
+    .finding h3 {
+        font-size: 1rem;
+    }
+
+    .finding p {
+        font-size: 0.82rem;
+    }
+
+    .screen-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .screen-actions .button {
+        width: 100%;
+    }
+
+    /* Timeline */
+
+    .timeline-container {
+        gap: 10px;
+    }
+
+    .timeline-entry,
+    .timeline-observation,
+    .action-card {
+        padding: 13px;
+    }
+
+    .autonomy-note {
+        padding: 11px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* Resources */
+
+    .resources-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .resource-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .resource-card {
+        padding: 15px;
+    }
+
+    .emergency-panel {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 13px;
+        padding: 17px;
+    }
+
+    .emergency-panel .button {
+        width: 100%;
+        white-space: normal;
+    }
+
+    /* Search */
+
+    .search-card form {
+        align-items: stretch;
+    }
+
+    .search-card form .button {
+        width: 100%;
+    }
+
+    .search-privacy-note {
+        padding: 12px;
+    }
+
+
+    /* Mobile navigation */
+
+    .mobile-navigation {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex: 0 0 var(--mobile-nav-height);
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 3px;
+        width: 100%;
+        height: var(--mobile-nav-height);
+        min-height: var(--mobile-nav-height);
+        padding:
+                5px
+                6px
+                max(5px, env(safe-area-inset-bottom, 0px));
+        border-top: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.99);
+        box-shadow: 0 -5px 18px rgba(56, 23, 40, 0.035);
+        overflow-x: auto;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+        scrollbar-width: thin;
+        scrollbar-color: #efb5cd transparent;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-navigation::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    .mobile-navigation::-webkit-scrollbar-thumb {
+        border-radius: 99px;
+        background: #efb5cd;
+    }
+
+    .mobile-nav-link {
+        display: flex;
+        flex: 0 0 clamp(57px, 16vw, 72px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        width: clamp(57px, 16vw, 72px);
+        min-width: clamp(57px, 16vw, 72px);
+        min-height: 48px;
+        padding: 4px 2px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        background: transparent;
+        color: #776b77;
+        cursor: pointer;
+    }
+
+    .mobile-nav-link > span {
+        font-size: 1.12rem;
+        line-height: 1.15;
+    }
+
+    .mobile-nav-link small {
+        max-width: 100%;
+        font-size: 0.61rem;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .mobile-nav-link.active {
+        border-color: #f8d1e1;
+        background: var(--pink-light);
+        color: var(--pink-deep);
+    }
+}
+
+
+/* =========================================================
+   21. VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+    .topbar {
+        padding-right: 9px;
+        padding-left: 9px;
+    }
+
+    .topbar-subtitle {
+        max-width: 150px;
+        font-size: 0.64rem;
+    }
+
+    .screen {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    #screen-home {
+        padding-top: 125px;
+    }
+
+    .home-emergency-panel {
+        right: 10px;
+        left: 10px;
+        padding: 9px 10px;
+    }
+
+    .home-welcome-centered h1 {
+        font-size: 2.05rem;
+    }
+
+    .home-layout,
+    .home-layout-centered {
+        min-height: 350px;
+    }
+
+    .content-card {
+        padding: 13px;
+    }
+
+    .mobile-nav-link small {
+        font-size: 0.57rem;
+    }
+
+    .mobile-nav-link > span {
+        font-size: 1.05rem;
+    }
+
+    .emergency-panel {
+        padding: 14px;
+    }
+}
+
+
+/* =========================================================
+   22. SHORT LAPTOP VIEWPORTS
+   ========================================================= */
+
+@media (max-height: 700px) and (min-width: 651px) {
+    .screen {
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+
+    .screen.active:not([hidden]) {
+        gap: 12px;
+    }
+
+    #screen-home {
+        padding-top: 102px;
+    }
+
+    .home-emergency-panel {
+        top: 12px;
+    }
+
+    .home-layout,
+    .home-layout-centered {
+        min-height: 330px;
+    }
+
+    .home-welcome-centered h1 {
+        font-size: clamp(2.2rem, 4vw, 3.5rem);
+    }
+
+    .welcome-description {
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+
+    .home-actions {
+        margin-bottom: 13px;
+    }
+
+    .content-card {
+        padding-top: 19px;
+        padding-bottom: 19px;
+    }
+}
+
+
+/* =========================================================
+   23. SHORT MOBILE VIEWPORTS
+   ========================================================= */
+
+@media (max-height: 740px) and (max-width: 650px) {
+    .screen {
+        padding-top: 12px;
+        padding-bottom: 17px;
+    }
+
+    .screen.active:not([hidden]) {
+        gap: 12px;
+    }
+
+    #screen-home {
+        padding-top: 116px;
+    }
+
+    .home-emergency-panel {
+        top: 8px;
+    }
+
+    .home-welcome-centered .eyebrow {
+        margin-bottom: 9px;
+    }
+
+    .home-welcome-centered h1 {
+        margin-bottom: 11px;
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
+    }
+
+    .home-layout,
+    .home-layout-centered {
+        min-height: 325px;
+    }
+
+    .welcome-description {
+        margin-bottom: 13px;
+        line-height: 1.5;
+    }
+
+    .home-actions {
+        margin-bottom: 10px;
+    }
+
+    .home-footer-note {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}

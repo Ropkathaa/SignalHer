@@ -1,0 +1,35 @@
+﻿# Python temporary files
+__pycache__/
+*.py[cod]
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# IDE configuration
+.idea/
+
+# Local datasets
+data/
+
+# Original notebook folder and its checkpoints
+# The cleaned copy at the project root is kept separately.
+01_backend_development.ipynb/
+
+# Frontend backups
+frontend_backup*/
+
+# Windows shortcut files
+*.lnk
+
+# Local environments and credentials
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Logs and operating-system files
+*.log
+.DS_Store
+Thumbs.db

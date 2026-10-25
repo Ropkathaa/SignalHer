@@ -1,0 +1,20 @@
+{
+  "model_type": "TF-IDF word and character features + Logistic Regression",
+  "classes": [
+    "cyberbullying",
+    "hate_speech",
+    "neutral",
+    "sexual_harassment",
+    "trolling"
+  ],
+  "training_samples": 4514,
+  "test_samples": 1129,
+  "conflicting_text_rows_removed": 67,
+  "accuracy": 0.4738706820194863,
+  "balanced_accuracy": 0.46539057699855685,
+  "macro_precision": 0.4706236309636763,
+  "macro_recall": 0.46539057699855685,
+  "macro_f1": 0.4671474197635746,
+  "split_random_state": 42,
+  "test_size": 0.2
+}
